@@ -1,6 +1,12 @@
 export const lookupKeyRegExp = /{[\w\d:_\-,]+}/;
 
-export default function get(object, path) {
+export default function get(object, path, defaultValue) {
+  const result = doGet(object, path);
+
+  return result === undefined ? defaultValue : result;
+}
+
+function doGet(object, path) {
   if (!object) return undefined;
   if (!path) return object;
 
@@ -11,10 +17,10 @@ export default function get(object, path) {
       throw new Error(`Lookup key '${key}' cannot be used for non-array object ${JSON.stringify(object)}`);
     }
 
-    return get(object[lookupIndex(object, key)], rest);
+    return doGet(object[lookupIndex(object, key)], rest);
   }
 
-  return get(object[key], rest);
+  return doGet(object[key], rest);
 }
 
 

@@ -61,3 +61,11 @@ describe("lookupIndex", () => {
     expect(lookupIndex(ary, "{bar:2}")).to.eq(1);
   });
 });
+
+describe("defaultValue", () => {
+  it("returns default value if given and path resolves to `undefined`", () => {
+    const obj = {foo: {bar: "baz"}};
+
+    expect(get(obj, "foo.baz", "bak")).to.eq("bak");
+  });
+});

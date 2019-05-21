@@ -12,6 +12,7 @@
     "prepublishOnly": "npm run transpile"
   },
   "keywords": [
+    "js",
     "object",
     "getter",
     "properties",
