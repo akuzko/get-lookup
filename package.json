@@ -20,6 +20,7 @@
     "helper"
   ],
   "author": "Artem Kuzko <a.kuzko@gmail.com> (https://github.com/akuzko)",
+  "homepage": "https://github.com/akuzko/get-lookup",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.4.4",

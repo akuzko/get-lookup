@@ -5,6 +5,8 @@ JS helper for object deeply nested properties lookup. Much like
 [`lodash.get`](https://www.npmjs.com/package/lodash.get), but with some
 additional useful features.
 
+[![build status](https://img.shields.io/travis/akuzko/get-lookup/master.svg?style=flat-square)](https://travis-ci.org/akuzko/get-lookup)
+
 ## Installation
 
 ```
