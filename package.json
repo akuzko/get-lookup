@@ -1,0 +1,35 @@
+{
+  "name": "get-lookup",
+  "version": "1.0.0",
+  "description": "Helper for object deeply nested properties lookup",
+  "main": "dist/index.js",
+  "scripts": {
+    "clear": "rimraf dist",
+    "test": "mocha --require @babel/register --require @babel/polyfill --recursive",
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint src test",
+    "transpile": "npm run clear && babel src -d dist --copy-files",
+    "prepublishOnly": "npm run transpile"
+  },
+  "keywords": [
+    "object",
+    "getter",
+    "properties",
+    "lookup",
+    "helper"
+  ],
+  "author": "Artem Kuzko <a.kuzko@gmail.com> (https://github.com/akuzko)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4",
+    "rimraf": "^2.6.3"
+  }
+}
