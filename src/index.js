@@ -1,4 +1,20 @@
-export const lookupKeyRegExp = /{[\w\d:_\-,]+}/;
+let lookupTermRegExp;
+
+Object.defineProperty(get, 'lookupTermRegExp', {
+  enumerable: false,
+  configurable: false,
+  get() {
+    return lookupTermRegExp;
+  },
+  set(value) {
+    const segment = `${value.source}:${value.source}`;
+
+    lookupTermRegExp = value;
+    this.lookupKeyRegExp = new RegExp(`{${segment}(?:,${segment})*}`);
+  }
+});
+
+get.lookupTermRegExp = /[\w\d_\-]+/;
 
 export default function get(object, path, defaultValue) {
   const result = doGet(object, path);
@@ -23,9 +39,8 @@ function doGet(object, path) {
   return doGet(object[key], rest);
 }
 
-
 export function isLookupKey(key) {
-  return lookupKeyRegExp.test(key);
+  return get.lookupKeyRegExp.test(key);
 }
 
 export function lookupIndex(collection, key) {

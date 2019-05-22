@@ -6,6 +6,7 @@ JS helper for object deeply nested properties lookup. Much like
 additional useful features.
 
 [![build status](https://img.shields.io/travis/akuzko/get-lookup/master.svg?style=flat-square)](https://travis-ci.org/akuzko/get-lookup)
+[![npm version](https://img.shields.io/npm/v/get-lookup.svg?style=flat-square)](https://www.npmjs.com/package/get-lookup)
 
 ## Installation
 
@@ -89,6 +90,28 @@ import { isLookupKey, lookupIndex } from 'get-lookup';
 - `lookupIndex(array, key)` - returns an integer index of the element of the
   given `array` that is identified by lookup key `key`. Returns `-1` if no
   corresponding element is found.
+
+### Configuration
+
+It is also possible to set custom value for lookup key term `RegExp`. A term is
+a part of the lookup key that represents property or value. Two terms together
+with semicolon between them represent a segment. One or more segments separated
+by commas and surrounded by curly braces represent lookup key itself.
+
+To set custom term regular expression simply assign `lookupTermRegExp` property
+to `get` function itself:
+
+```js
+import get, { isLookupKey } from 'get-lookup';
+
+isLookupKey('{foo:b@r}'); // => false
+
+get.lookupTermRegExp = /[\w\d@_\-]+/;
+
+isLookupKey('{foo:b@r}'); // => true
+```
+
+The default value for lookup key term regexp is `/[\w\d_\-]+/`.
 
 ## License
 
