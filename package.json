@@ -21,6 +21,13 @@
   ],
   "author": "Artem Kuzko <a.kuzko@gmail.com> (https://github.com/akuzko)",
   "homepage": "https://github.com/akuzko/get-lookup",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akuzko/get-lookup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/akuzko/get-lookup/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.4.4",

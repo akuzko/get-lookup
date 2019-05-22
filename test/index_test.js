@@ -57,7 +57,7 @@ describe("isLookupKey", () => {
 describe("lookupIndex", () => {
   const ary = [{bar: 1}, {bar: 2}, {bar: 3}];
 
-  it("returns indes in array via lookup key", () => {
+  it("returns index in array via lookup key", () => {
     expect(lookupIndex(ary, "{bar:2}")).to.eq(1);
   });
 });

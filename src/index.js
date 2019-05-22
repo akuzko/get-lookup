@@ -1,6 +1,6 @@
 let lookupTermRegExp;
 
-Object.defineProperty(get, 'lookupTermRegExp', {
+Object.defineProperty(get, "lookupTermRegExp", {
   enumerable: false,
   configurable: false,
   get() {
@@ -14,7 +14,7 @@ Object.defineProperty(get, 'lookupTermRegExp', {
   }
 });
 
-get.lookupTermRegExp = /[\w\d_\-]+/;
+get.lookupTermRegExp = /[\w\d_-]+/;
 
 export default function get(object, path, defaultValue) {
   const result = doGet(object, path);

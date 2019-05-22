@@ -106,12 +106,12 @@ import get, { isLookupKey } from 'get-lookup';
 
 isLookupKey('{foo:b@r}'); // => false
 
-get.lookupTermRegExp = /[\w\d@_\-]+/;
+get.lookupTermRegExp = /[\w\d@_-]+/;
 
 isLookupKey('{foo:b@r}'); // => true
 ```
 
-The default value for lookup key term regexp is `/[\w\d_\-]+/`.
+The default value for lookup key term regexp is `/[\w\d_-]+/`.
 
 ## License
 
