@@ -23,8 +23,7 @@ export default function get(object, path, defaultValue) {
 }
 
 function doGet(object, path) {
-  if (!object) return undefined;
-  if (!path) return object;
+  if (!object || !path) return object;
 
   const [_match, key, rest] = path.match(/^([^.]+)\.?(.+)?$/);
 

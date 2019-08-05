@@ -3,6 +3,7 @@ import get, { isLookupKey, lookupIndex } from "../src";
 
 describe("get", () => {
   const obj = {
+    empty: "",
     foo: {
       bars: [{
         baz: 1,
@@ -16,6 +17,10 @@ describe("get", () => {
       }]
     }
   };
+
+  it("returns empty value", () => {
+    expect(get(obj, "empty")).to.eq("");
+  });
 
   it("returns deeply nested value", () => {
     expect(get(obj, "foo.bars.1.baz")).to.eq(1);
@@ -63,7 +68,7 @@ describe("lookupIndex", () => {
 });
 
 describe("defaultValue", () => {
-  it("returns default value if given and path resolves to `undefined`", () => {
+  it("returns default value, if given, and if path resolves to `undefined`", () => {
     const obj = {foo: {bar: "baz"}};
 
     expect(get(obj, "foo.baz", "bak")).to.eq("bak");
