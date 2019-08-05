@@ -1,6 +1,6 @@
 {
   "name": "get-lookup",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Helper for object deeply nested properties lookup",
   "main": "dist/index.js",
   "scripts": {
